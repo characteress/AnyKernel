@@ -45,8 +45,8 @@ bb=/tmp/anykernel/tools/busybox;
 
 ui_print "$(file_getprop /tmp/anykernel/anykernel.sh kernel.string)";
 ui_print " ";
-ui_print "Firangi Kernel";
-ui_print " By Team Firangi ";
+ui_print "OverPowered Kernel";
+ui_print " By Characteress ";
 ui_print "AnyKernel2 by osm0sis @ xda-developers";
 mount -o ro -t auto /system;
 mount /data;
