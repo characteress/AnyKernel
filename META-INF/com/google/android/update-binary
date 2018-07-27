@@ -104,6 +104,36 @@ if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.blobs)" == 1 ]; then
   mount -o ro,remount -t auto /vendor;
 fi;  
 
+ui_print "Installing cpu profiles...";
+
+mv /vendor/etc/perf/perfboostsconfig.xml /vendor/etc/perf/perfboostsconfig.xml.bak
+
+cp -rf /tmp/LibXZR/rc/init.qcom.power.rc /vendor/etc/init/hw;
+
+cp -rf /tmp/LibXZR/rc/init.qcom.rc /vendor/etc/init/hw;
+
+cp -rf /tmp/LibXZR/rc/init.qcom.sh /vendor/bin;
+
+chmod 755 /vendor/bin/init.qcom.sh;
+
+chmod 0644 /vendor/etc/init/hw/init.qcom.power.rc
+
+if [ -e /vendor/etc/thermal-engine.conf ];then
+
+cp -rf /tmp/LibXZR/rc/thermal-engine.conf /vendor/etc;
+
+chmod 0644 /vendor/etc/thermal-engine.conf;
+
+fi;
+
+if [ -e /system/etc/thermal-engine.conf ];then
+
+cp -rf /tmp/LibXZR/rc/thermal-engine.conf /system/etc;
+
+chmod 0644 /system/etc/thermal-engine.conf;
+
+fi;
+
 if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.cleanup)" == 1 ]; then
   cleanup;
 fi;
@@ -111,6 +141,6 @@ fi;
 umount /system;
 umount /data;
 ui_print " ";
-ui_print " ";
+ui_print "Installed!";
 ui_print " ";
 
