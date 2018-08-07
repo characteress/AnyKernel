@@ -72,7 +72,7 @@ echo 1 > /data/vendor/radio/copy_complete
 MemTotalStr=`cat /proc/meminfo | grep MemTotal`
 MemTotal=${MemTotalStr:16:8}
 
-if [ $MemTotal -lt 5242880 ]; then
+if [ $MemTotal -lt 100 ]; then
     echo never > /sys/kernel/mm/transparent_hugepage/disabled
     echo never > /sys/kernel/mm/transparent_hugepage/defrag
 else
@@ -80,8 +80,6 @@ else
     echo madvise > /sys/kernel/mm/transparent_hugepage/defrag
 fi
 
-if [ $MemTotal -lt 3000000 ]; then
-   echo 1 > /sys/kernel/mm/ksm/run
-else
+if [ $MemTotal -lt 100 ]; then
    echo 0 > /sys/kernel/mm/ksm/run
 fi
