@@ -108,11 +108,11 @@ ui_print "Installing cpu profiles...";
 
 mv /vendor/etc/perf/perfboostsconfig.xml /vendor/etc/perf/perfboostsconfig.xml.bak
 
-cp -rf /tmp/LibXZR/rc/init.qcom.power.rc /vendor/etc/init/hw;
+cp -rf /tmp/Overpowered/rc/init.qcom.power.rc /vendor/etc/init/hw;
 
-cp -rf /tmp/LibXZR/rc/init.qcom.rc /vendor/etc/init/hw;
+cp -rf /tmp/Overpowered/rc/init.qcom.rc /vendor/etc/init/hw;
 
-cp -rf /tmp/LibXZR/rc/init.qcom.sh /vendor/bin;
+cp -rf /tmp/Overpowered/rc/init.qcom.sh /vendor/bin;
 
 chmod 755 /vendor/bin/init.qcom.sh;
 
@@ -120,7 +120,7 @@ chmod 0644 /vendor/etc/init/hw/init.qcom.power.rc
 
 if [ -e /vendor/etc/thermal-engine.conf ];then
 
-cp -rf /tmp/LibXZR/rc/thermal-engine.conf /vendor/etc;
+cp -rf /tmp/Overpowered/rc/thermal-engine.conf /vendor/etc;
 
 chmod 0644 /vendor/etc/thermal-engine.conf;
 
@@ -128,7 +128,7 @@ fi;
 
 if [ -e /system/etc/thermal-engine.conf ];then
 
-cp -rf /tmp/LibXZR/rc/thermal-engine.conf /system/etc;
+cp -rf /tmp/Overpowered/rc/thermal-engine.conf /system/etc;
 
 chmod 0644 /system/etc/thermal-engine.conf;
 
