@@ -140,6 +140,9 @@ Gustavo, [07.08.18 11:12]
         write /proc/sys/kernel/random/read_wakeup_threshold 512
         write /proc/sys/kernel/random/write_wakeup_threshold 1024
 
+	write /sys/class/kgsl/kgsl-3d0/max_gpuclk 780000000
+	write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
+
   write /sys/class/kgsl/kgsl-3d0/max_gpuclk 780000000
 service charger /sbin/chargeonlymode
     class charger
