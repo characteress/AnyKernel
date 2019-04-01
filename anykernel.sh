@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() {
-kernel.string="OP CAF Kernel"
+kernel.string="Coffee Kernel"
 do.devicecheck=0
 do.modules=0
 do.cleanup=1
