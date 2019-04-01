@@ -26,7 +26,7 @@ on property:sys.post_boot.parsed=1
         write /sys/devices/platform/kcal_ctrl.0/kcal_enable 1
         write /sys/devices/platform/kcal_ctrl.0/kcal_sat 255
 
-    write /sys/block/sda/queue/scheduler row
+    write /sys/block/sda/queue/scheduler noop
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/add_random 0
     write /sys/block/sda/queue/rotational 0
@@ -36,9 +36,9 @@ on property:sys.post_boot.parsed=1
     write /proc/sys/vm/vfs_cache_pressure 10
 
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable "1"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable "0"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/iowait_boost_enable "1"
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/iowait_boost_enable "0"
 
     # BYE Perfd
     write /sys/devices/soc/soc:qcom,bcl/mode "disable"
